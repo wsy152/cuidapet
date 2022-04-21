@@ -12,7 +12,7 @@ class AppWidget extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (_) => MaterialApp(
-        initialRoute: '/auth',
+        initialRoute: '/auth/',
         title: UiConfig.title,
         theme: UiConfig.theme,
         builder: asuka.builder,
