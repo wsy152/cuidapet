@@ -1,8 +1,13 @@
 import 'package:cuidapet_mobile/app/core/ui/extensions/size_screen_extensions.dart';
+import 'package:cuidapet_mobile/app/modules/core/auth/auth_store.dart';
 import 'package:flutter/material.dart';
 
 class AuthHomePage extends StatefulWidget {
-  const AuthHomePage({Key? key}) : super(key: key);
+  final AuthStore _authStore;
+
+  const AuthHomePage({Key? key, required AuthStore authStore})
+      : _authStore = authStore,
+        super(key: key);
 
   @override
   _AuthHomePageState createState() => _AuthHomePageState();
