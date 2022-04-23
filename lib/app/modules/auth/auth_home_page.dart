@@ -1,6 +1,9 @@
 import 'package:cuidapet_mobile/app/core/ui/extensions/size_screen_extensions.dart';
+import 'package:cuidapet_mobile/app/models/user_model.dart';
 import 'package:cuidapet_mobile/app/modules/core/auth/auth_store.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mobx/mobx.dart';
 
 class AuthHomePage extends StatefulWidget {
   final AuthStore _authStore;
@@ -14,6 +17,22 @@ class AuthHomePage extends StatefulWidget {
 }
 
 class _AuthHomePageState extends State<AuthHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    reaction<UserModel?>((_) => widget._authStore.userModel, (userModel) {
+      if (userModel != null && userModel.email.isNotEmpty) {
+        Modular.to.navigate('/home');
+      } else {
+         Modular.to.navigate('/auth/login');
+      }
+    });
+
+    WidgetsBinding.instance?.addPersistentFrameCallback((_) { 
+      widget._authStore.loadUser();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

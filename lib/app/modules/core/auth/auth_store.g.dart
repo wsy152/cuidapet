@@ -9,18 +9,18 @@ part of 'auth_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$AuthStore on _AuthStoreBase, Store {
-  final _$_userModelAtom = Atom(name: '_AuthStoreBase._userModel');
+  final _$userModelAtom = Atom(name: '_AuthStoreBase.userModel');
 
   @override
-  UserModel? get _userModel {
-    _$_userModelAtom.reportRead();
-    return super._userModel;
+  UserModel? get userModel {
+    _$userModelAtom.reportRead();
+    return super.userModel;
   }
 
   @override
-  set _userModel(UserModel? value) {
-    _$_userModelAtom.reportWrite(value, super._userModel, () {
-      super._userModel = value;
+  set userModel(UserModel? value) {
+    _$userModelAtom.reportWrite(value, super.userModel, () {
+      super.userModel = value;
     });
   }
 
@@ -34,7 +34,7 @@ mixin _$AuthStore on _AuthStoreBase, Store {
   @override
   String toString() {
     return '''
-
+userModel: ${userModel}
     ''';
   }
 }

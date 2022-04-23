@@ -6,10 +6,10 @@ class AuthStore = _AuthStoreBase with _$AuthStore;
 
 abstract class _AuthStoreBase with Store {
   @observable
-  UserModel? _userModel;
+  UserModel? userModel;
 
   @action
   Future<void> loadUser() async {
-    _userModel = UserModel.empty();
+    userModel = UserModel.empty();
   }
 }
