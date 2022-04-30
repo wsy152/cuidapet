@@ -9,8 +9,7 @@ class AuthModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute(Modular.initialRoute,
-        child: (_, args) => AuthHomePage(authStore: Modular.get())),
+    ChildRoute(Modular.initialRoute, child: (_, args) => AuthHomePage(authStore: Modular.get())),
     ModuleRoute('/login', module: LoginModule())
   ];
 }

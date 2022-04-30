@@ -24,11 +24,11 @@ class _AuthHomePageState extends State<AuthHomePage> {
       if (userModel != null && userModel.email.isNotEmpty) {
         Modular.to.navigate('/home');
       } else {
-         Modular.to.navigate('/auth/login');
+        Modular.to.navigate('/auth/login');
       }
     });
 
-    WidgetsBinding.instance?.addPersistentFrameCallback((_) { 
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
       widget._authStore.loadUser();
     });
   }
@@ -36,6 +36,9 @@ class _AuthHomePageState extends State<AuthHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   title:const Text('Splash'),
+      // ),
       body: Center(
         child: Image.asset(
           'assets/images/logo.png',
