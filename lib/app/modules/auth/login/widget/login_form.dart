@@ -4,6 +4,7 @@ import 'package:cuidapet_mobile/app/core/ui/extensions/theme_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/ui/widgets/cuidapet_text_form_field.dart';
+import '../../../../core/ui/widgets/rounded_button_with_icon.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -44,10 +45,11 @@ class _LoginFormState extends State<LoginForm> {
             width: double.infinity,
             height: 58,
             child:
-                ElevatedButton(onPressed: () {}, child: const Text('Entrar'))),
-               const Icon(Cuidapeticons.facebook,color: Colors.blue, ),
-               const Icon(Cuidapeticons.google,color: Colors.red, ),
-               const Icon(Cuidapeticons.apple,color: Colors.cyan, ),
+                ElevatedButton(onPressed: () {}, child: const Text('Entrar 0000'))),
+  
+               RoundedButtonWithIcon(onTap: (){},color: Colors.blue,width: 200,icon: Cuidapeticons.facebook,label: 'Facebook'),
+               RoundedButtonWithIcon(onTap: (){},color: Colors.black,width: 200,icon: Cuidapeticons.apple,label: 'Apple'),
+               RoundedButtonWithIcon(onTap: (){},color: Colors.red,width: 200,icon: Cuidapeticons.google,label: 'Google'),
         Row(
           children: [
             Expanded(
