@@ -45,7 +45,7 @@ class _LoginFormState extends State<LoginForm> {
             width: double.infinity,
             height: 58,
             child:
-                ElevatedButton(onPressed: () {}, child: const Text('Entrar 0000'))),
+                ElevatedButton(onPressed: () {}, child: const Text('Entrar'))),
   
                RoundedButtonWithIcon(onTap: (){},color: Colors.blue,width: 200,icon: Cuidapeticons.facebook,label: 'Facebook'),
                RoundedButtonWithIcon(onTap: (){},color: Colors.black,width: 200,icon: Cuidapeticons.apple,label: 'Apple'),
