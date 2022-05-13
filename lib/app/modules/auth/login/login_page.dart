@@ -3,6 +3,8 @@ import 'package:cuidapet_mobile/app/modules/auth/login/widget/login_form.dart';
 import 'package:cuidapet_mobile/app/modules/auth/login/widget/login_register_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/ui/widgets/cuidapet_default_button.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -27,6 +29,7 @@ class _LoginPageState extends State<LoginPage> {
               fit: BoxFit.fill,
             ),
             const LoginForm(),
+             CuidapetDefaultButton(label: 'Entrar', onPressed: (){}),
            const LoginRegisterButton()
           ],
         ),
