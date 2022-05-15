@@ -1,38 +1,29 @@
-import 'package:cuidapet_mobile/app/core/ui/extensions/size_screen_extensions.dart';
-import 'package:flutter/material.dart';
+part of '../login_page.dart';
 
-class LoginRegisterButton extends StatefulWidget {
+class _LoginRegisterButton extends StatefulWidget {
 
-  const LoginRegisterButton({ Key? key }) : super(key: key);
+  const _LoginRegisterButton({ Key? key }) : super(key: key);
 
   @override
   _LoginRegisterButtonState createState() => _LoginRegisterButtonState();
 }
 
-class _LoginRegisterButtonState extends State<LoginRegisterButton> {
+class _LoginRegisterButtonState extends State<_LoginRegisterButton> {
 
    @override
    Widget build(BuildContext context) {
        return Wrap(
+         direction: Axis.horizontal,
          alignment: WrapAlignment.center,
          spacing: 10,
          runSpacing: 10,
          children: [
-           Container(
-             width: 163.w,
-             height: 40.h,
-             color: Colors.blue,
-           ),
-           Container(
-             width: 163.w,
-             height: 40.h,
-             color: Colors.orange,
-           ),
-           Container(
-             width: 163.w,
-             height: 40.h,
-             color: Colors.green,
-           ),
+           RoundedButtonWithIcon(onTap: (){}, width: .42.sw, color: const Color(0xFF426783), icon: Cuidapeticons.facebook, label: 'facebook'),
+           RoundedButtonWithIcon(onTap: (){}, width: .42.sw, color: const Color(0xFFE15031), icon: Cuidapeticons.google, label: 'Google'),
+           RoundedButtonWithIcon(onTap: (){
+             Navigator.pushNamed(context, '/auth/register');
+
+           }, width: .42.sw, color: context.primaryColorDark, icon: Icons.mail, label: 'Cadastre -se')
          ],
 
        );

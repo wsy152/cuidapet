@@ -1,11 +1,14 @@
+import 'package:cuidapet_mobile/app/core/ui/cuidapeticons_icons.dart';
 import 'package:cuidapet_mobile/app/core/ui/extensions/size_screen_extensions.dart';
 import 'package:cuidapet_mobile/app/core/ui/extensions/theme_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/ui/cuidapeticons_icons.dart';
+import '../../../core/ui/widgets/cuidapet_default_button.dart';
 import '../../../core/ui/widgets/cuidapet_text_form_field.dart';
 import '../../../core/ui/widgets/rounded_button_with_icon.dart';
+
 part '../login/widget/login_form.dart';
+part '../login/widget/login_register_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -20,30 +23,29 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding:const EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child: Column(
             children: [
-               SizedBox(
+              SizedBox(
                 height: 50.h,
-               
               ),
               Center(
-                child: 
-                Image.asset('assets/images/logo.png',
-              width: 162.w,
-              fit: BoxFit.fill,
-            ),
-                
-               
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 162.w,
+                  fit: BoxFit.fill,
+                ),
               ),
-             const SizedBox(height: 20),
-
-           const _LoginForm()
-
+              const SizedBox(height: 20),
+              const _LoginForm(),
+              const _OrSeparator(),
+              const SizedBox(
+                height: 8,
+              ),
+              const _LoginRegisterButton()
             ],
           ),
         ),
-
       ),
     );
   }

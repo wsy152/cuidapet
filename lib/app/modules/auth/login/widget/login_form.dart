@@ -1,5 +1,6 @@
 part of '../login_page.dart';
 
+
 class _LoginForm extends StatefulWidget {
   const _LoginForm({Key? key}) : super(key: key);
 
@@ -17,9 +18,7 @@ class _LoginFormState extends State<_LoginForm> {
           height: 10.h,
         ),
         CuidapetTextFormField(label: 'Login'),
-        SizedBox(
-          height: 20.h,
-        ),
+        SizedBox(height: 20.h),
         CuidapetTextFormField(
           label: 'Senha',
           obscureText: true,
@@ -32,19 +31,22 @@ class _LoginFormState extends State<_LoginForm> {
           },
         ),
         const SizedBox(
-          height: 20,
-        ),
-        Container(
-            padding: const EdgeInsets.all(10),
-            width: double.infinity,
-            height: 58,
-            child:
-                ElevatedButton(onPressed: () {}, child: const Text('Entrar'))),
-  
-               RoundedButtonWithIcon(onTap: (){},color: Colors.blue,width: 200,icon: Cuidapeticons.facebook,label: 'Facebook'),
-               RoundedButtonWithIcon(onTap: (){},color: Colors.black,width: 200,icon: Cuidapeticons.apple,label: 'Apple'),
-               RoundedButtonWithIcon(onTap: (){},color: Colors.red,width: 200,icon: Cuidapeticons.google,label: 'Google'),
-        Row(
+          height: 20 ),
+          CuidapetDefaultButton(label: 'Entrar', onPressed: (){}),
+        
+      ],
+    );
+  }
+}
+
+
+class _OrSeparator extends StatelessWidget {
+
+  const _OrSeparator({ Key? key }) : super(key: key);
+
+   @override
+   Widget build(BuildContext context) {
+       return Row(
           children: [
             Expanded(
               child: Divider(
@@ -58,7 +60,7 @@ class _LoginFormState extends State<_LoginForm> {
                 'OU',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15.sp,
+                    fontSize: 20.sp,
                     color: context.primaryColor),
               ),
             ),
@@ -69,8 +71,6 @@ class _LoginFormState extends State<_LoginForm> {
               ),
             )
           ],
-        )
-      ],
-    );
+        );
   }
 }
