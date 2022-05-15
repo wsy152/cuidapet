@@ -1,19 +1,13 @@
-import 'package:cuidapet_mobile/app/core/ui/cuidapeticons_icons.dart';
-import 'package:cuidapet_mobile/app/core/ui/extensions/size_screen_extensions.dart';
-import 'package:cuidapet_mobile/app/core/ui/extensions/theme_extension.dart';
-import 'package:flutter/material.dart';
+part of '../login_page.dart';
 
-import '../../../../core/ui/widgets/cuidapet_text_form_field.dart';
-import '../../../../core/ui/widgets/rounded_button_with_icon.dart';
-
-class LoginForm extends StatefulWidget {
-  const LoginForm({Key? key}) : super(key: key);
+class _LoginForm extends StatefulWidget {
+  const _LoginForm({Key? key}) : super(key: key);
 
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<_LoginForm> createState() => _LoginFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _LoginFormState extends State<_LoginForm> {
   final ctrlSenha = TextEditingController();
   @override
   Widget build(BuildContext context) {
